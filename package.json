@@ -1,0 +1,20 @@
+{
+  "name": "data_selfie",
+  "version": "1.0.0",
+  "description": "This is data selfie app by joey lee.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "data",
+    "selfie",
+    "test",
+    "js"
+  ],
+  "author": "Srujan",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
