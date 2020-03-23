@@ -241,3 +241,348 @@ function addThree(){
     sum += 4
 }
 console.log(addThree()); // the result is undefined cause it has nothing to return
+
+/*USING CONDITION LOGIC
+WITH IF STATEMENTS */
+
+function trueOrFlase(wasThatTrue){
+    if(wasThatTrue) {
+        return "yes! that was true";
+    }
+
+    return "No, that was false";
+
+}
+
+console.log(trueOrFlase(false));
+
+ /*COMPARISON WITH THE 
+ EQUALITY OPEARATOR */
+
+ function testEquak(val) {
+     if (val == 32) {
+         return "The value is correct";
+     }
+     return "Not the correct value";
+ }
+
+ console.log(testEquak(32));
+
+ /*STRICT EQUALITY OPERATORS */
+
+ 32 === 32; // checks only value  in this case it is equal 
+ 32 === '32' // checks both type and value
+
+ /*PRACTICE COMPARING DIFFERENT VALUES */
+
+  function comparaisionEquality(a, b) {
+      if (a ===b) {
+          return "equal"
+      }
+      return "Not equal"
+  }
+
+  console.log(comparaisionEquality(10, "10"));
+
+  /*INEQUALITY OPERARATOR */
+
+  function inequaityOperator(a,b){
+      if (a != b){
+          return "yep!, they are unequal"
+      }
+      return "equal"
+  }
+
+console.log(inequaityOperator(5, 6));
+
+/*COMPARISON WITH THE STRICT INEQUALITY OPERATOR */
+
+function testStrictNotEqual(val){
+    if (val !== 12){
+        return "Not equal";
+    }
+    return "equal";
+}
+
+console.log(testStrictNotEqual('12'));
+
+/*COMPARISON OPERATORS */
+
+function testLessOrEqual(val) {
+    if(val <= 3){
+        return "smaller than 3";
+    }
+    if(val <= 24) {
+        return "smaller than 24";
+    }
+
+    return "More than 24";
+}
+
+console.log(testLessOrEqual(5));
+
+/*COMPARISONS WITH THE LOGICAL 'AND(&&)' or OR(||) OPERATOR */
+
+function testLogicalAnd(val){
+    if (val <= 50 && val >= 25){
+        return "True";
+    }
+    return "False";
+}
+
+console.log(testLogicalAnd(32));
+
+
+/*LOGICAL ORDER IN IF ELSE STATEMENTS */
+
+function orderMyLogic(val) {
+    if (val < 5) {
+        return "Less than 5";
+    } else if (val < 10) {
+        return "Less than 10";
+    } else {
+        return "Greater than or equal to 10"
+    }
+}
+
+console.log(orderMyLogic(3));
+
+function ifelse(valle){
+
+    if (valle < 5) {
+        return "tiny";
+    } else if (valle < 10) {
+        return "Small";
+    } else if (valle < 15) {
+        return "Medium";
+    } else if (valle < 20) {
+        return "Large";
+    } else if (valle >= 20) {
+        return "Huge";
+    }
+
+}
+
+console.log(ifelse(4));
+
+/*GOLF CODE */
+
+var names = ["Hole-in_One!", "Eagle", "Birdie", "par", "Bogey", "Double Bogey", "Go Home!"];
+
+function golfScore(par, strokes) {
+   
+   if (strokes == 1){
+       return names[0];
+   } else if (strokes <= par - 2) {
+       return names[1];
+   } else if (strokes == par -1) {
+       return names[2];
+   } else if (strokes == par) {
+       return names[3];
+   } else if (strokes == par + 1) {
+       return names[4];
+   } else if (strokes == par + 2) {
+       return names[5];
+   } else if (strokes == par + 3) {
+       return names[6];
+   }
+}
+
+console.log(golfScore(5,4));
+
+/*SWITCH STATEMENTS */
+
+function caseInSwitch(valaue) {
+    var answer = "";
+    switch(valaue) {
+        case 1:
+            answer = "alpha";
+            break;
+        case 2:
+            answer = "beta";
+            break;
+        case 3:
+            answer = "gamma";
+            break;
+        case 4:
+            answer = "delta";
+            break;
+        default:
+            answer = "greek alphabet upto delta";
+}
+return answer;
+}
+
+console.log(caseInSwitch(35));
+
+/*MULTIPLE IDENTICAL OPTIONS
+IN SWITCH STATEMENTS */
+
+function sequentialSizes(num) {
+    var answer = "";
+    switch(num) {
+        case 1:
+        case 2:
+        case 3:
+            answer = "Low";
+            break;
+        case 4:
+        case 5:
+        case 6:
+            answer = "Mid";
+            break;
+        case 7:
+        case 8:
+        case 9:
+            answer = "High";
+            break;  
+    }
+    return answer;
+}
+console.log(sequentialSizes(4));
+
+
+/*RETURNING BOOLEAN VALUES FROM
+FUNCTIONS */
+
+function isLess(a, b){
+    return a < b;
+}
+
+console.log(isLess(10,15));
+
+/*RETURNING EARLY PATTERN 
+FROM FUNCTIONS*/
+
+function abTest(a,b) {
+    if(a < 0 || b < 0) {
+        return "undefined";
+    }
+}
+
+console.log(abTest(-2,-3));
+
+
+/*CARDS VALUES USING SWITCH AND CASE */
+
+var count = 0;
+
+function cc(card){
+
+    switch(card){
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+        case 6:
+            count++;
+            break;
+        case 10:
+        case "J":
+        case "Q":
+        case "k":
+        case "A":
+            count--;
+            break;
+
+    }
+
+    var holdbet = "Hold";
+    if (count > 0) {
+        holdbet = "Bet";
+    }
+    return count + " " + holdbet;
+}
+
+console.log(cc(2));
+
+/*JAVASCRIPT OBJECTS */
+
+var myDog = {
+    "name": "scobby",
+    "legs" : 4,
+    "tail": 1,
+    "friends": ["Shaggy", "velma", "Fred", "daphne"]
+}
+
+/*ACCESSING OBJECTS WITH DOT(.) NOTATION */
+var dogName = myDog.name;
+console.log(dogName);
+var dogFriends = myDog.friends[0,2];
+console.log(dogFriends);
+
+/*ACCESSING OBJECT PROPERTIES WITH
+BRACKET NOTATION */
+
+//if object has a space in between it bracket notation works
+
+var testObject  = {
+    "an entree": "hamburger",
+    "my side": "veggies",
+    "the drink": "water"
+};
+
+var entreeValue = testObject["an entree"];
+console.log(entreeValue);
+
+/*ACCESSING OBJECT PROPERTIES WITH VARIABLES */
+
+var accVariable = {
+    1: "donkey",
+    2: "lion",
+    3: "Monkey"
+}
+
+var checkVariable = 1
+var animal = accVariable[checkVariable];
+console.log(animal);
+
+/*UPDATING OBJECT PROPERTIES */
+
+myDog.name = "Scobby Doobey doo";
+console.log(myDog.name);
+
+/*DELETEING OBJECTS USING DELETE KEYWORD */
+
+delete myDog.name;
+
+
+/*USING OBJECTS FOR LOOKUPS */
+
+function phoneticLookUp(vallee){
+    var res = "";
+
+    var looup = {
+        "alpha": "adams",
+        "bravo": "boston",
+        "charlie": "Chicago",
+        "delta": "Denver",
+        "echo": "easy"
+    }
+
+    res = looup[vallee];
+    return res;
+}
+
+console.log(phoneticLookUp("alpha"));
+
+/*TESTING OBJECTS FOR PROPERTIES */
+
+var myObj = {
+    gift: "pony",
+    pet: "kitten",
+    bed: "sleigh"
+};
+
+function checkObj(checkProp){
+    if(myObj.hasOwnProperty(checkProp)){
+        return myObj[checkProp];
+    } else {
+        return "Not found"
+    }
+
+}
+
+console.log(checkObj("gift"));
+
+/*MANIPULATING COMPLEX OBJECTSK+ */
