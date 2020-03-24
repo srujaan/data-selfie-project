@@ -585,4 +585,251 @@ function checkObj(checkProp){
 
 console.log(checkObj("gift"));
 
-/*MANIPULATING COMPLEX OBJECTSK+ */
+/*MANIPULATING COMPLEX OBJECTS */
+
+var myMusic = [
+    {
+        "artist": "Linkin Park",
+        "title": "Hybrid Theory",
+        "release_year": 2001,
+        "formats": [
+            "CD",
+            "Record",
+            "Digital"
+        ],
+        "Platinum": true
+    },
+    {
+        "artist": "Imagine Dragons",
+        "title": "Smokes and Mirrors",
+        "release_year": 2014,
+        "formats": [
+            "CD",
+            "Record",
+            "Digital",
+            "ipod"
+        ],
+        "Platinum": false
+    }
+];
+
+/*ACCESSING NESTED OBJECTS */
+
+var carObjects = {
+    "car": {
+        "inside": {
+            "glove box": "maps",
+            "passenger seat": "crumbs"
+        },
+        "outside": {
+            "trunk": "jack"
+        }
+    }
+};
+
+var gloveBoxContents = carObjects.car.inside["glove box"];
+console.log(gloveBoxContents);
+
+/*ACCESSING NESTED ARRAYS */
+
+var myPlants = [
+    {
+        type: "flowers",
+        list: [
+            "rose",
+            "tulip",
+            "dandelion"
+        ]
+    },
+    {
+        type: "trees",
+        list:[
+            "fir",
+            "pine",
+            "birch"
+        ]
+    }
+];
+
+console.log(myPlants[1].list[1]);
+
+/*RECORD COLLECTION */
+
+var collection = {
+    "2548": {
+        "album": "Slippery when wet",
+        "artist": "Bon Jovi",
+        "tracks": [
+            "Let it Rock",
+            "You give love a bad name"
+        ]
+    },
+    "2468": {
+        "album": "1999",
+        "artist": "Prince",
+        "tracks": [
+            "1999",
+            "Little Red Corvette"
+        ]
+    },
+    "1245": {
+        "artist": "Robert Palmer",
+        "tracks": [ ]
+    },
+    "5439": {
+        "album": "ABBA Gold"
+
+    }
+};
+
+// keep a copy of collection for tests
+
+var collectionCopy = JSON.parse(JSON.stringify(collection));
+console.log(collectionCopy);
+
+function updateRecords(id, prop, vaalue) {
+
+    if(vaalue === "") {
+        delete collection[id][prop];
+    } else if (prop === "tracks") {
+        collection[id][prop] = collection[id][prop] || [];
+        collection[id][prop].push(vaalue);
+    } else {
+        collection[id][prop] = vaalue;
+    }
+
+    return collection;
+}
+
+// alter values below to test your code
+console.log(updateRecords(5439, "artist", "ABBA"));
+
+
+/*ITERATE WITH WHILE LOOPS */
+
+var myAarray = [];
+
+var i = 0;
+while(i < 5) {
+    myAarray.push(i);
+    i++;
+}
+
+console.log(myAarray);
+
+/*ITERATE WITH FOR LOOPS */
+
+var justAaray = [];
+
+for(var i = 0; i < 5; i++){
+    justAaray.push(i);
+}
+
+console.log(justAaray);
+
+/*ITERATE ODD NUMBERS WITH A FOR LOOP */
+
+var oddNumList = [];
+
+for(var i = 1; i < 20; i += 2){
+    oddNumList.push(i);
+}
+
+console.log(oddNumList);
+
+/*COUNT BACKWARDS WITH A FOR LOOP */
+
+var countBackwardsList = [];
+
+for(var i = 10; i > 0; i--){
+    countBackwardsList.push(i);
+}
+
+console.log(countBackwardsList);
+
+/*ITERATE THROUGH AN ARRAY WITH A FOR LOOP */
+
+var myArr = [2,4,5,6,7];
+var total = 0;
+
+for(var i = 0; i < myArr.length; i++) {
+    total += myArr[i];
+}
+
+console.log(total);
+
+/*NESTED FOR LOOP */
+
+function multiplyArr(arr) {
+    var product = 1;
+
+    for(i=0;i < arr.length; i++) {
+        for(j = 0; j < arr[i].length; j++) {
+            product *= arr[i][j];
+        }
+    }
+
+
+    return product;
+
+}
+
+var product = multiplyArr([[1,2],[3,4],[5,6,7]]);
+console.log(product);
+
+/*ITERATE WITH DO... WHILE LOOPS */
+
+var myAry = [];
+var i = 10;
+
+do {
+    myAry.push(i);
+    i++;
+} while (i < 5)
+
+console.log(i, myAry);
+
+
+/*ACCESING OBJECTS IN THE LIST */
+
+var contacts = [
+    {
+        "firstName": "Harry",
+        "lastName": "Potter",
+        "number": "01254585",
+        "likes": ["magic", "hagrid", "hogwarts"]
+    },
+    {
+        "firstName": "Sherlock",
+        "lastName": "Holmes",
+        "number": "020548788985",
+        "likes": ["Intriguing Cases", "violin", "cigars"]
+    }
+];
+
+function lookUp(name, prop){
+
+    for(var i = 0; i < contacts.length; i++) {
+        if(contacts[i].firstName === name) {
+            return contacts[i][prop] || "No such property";
+        }
+    }
+
+    return "No such contact"
+
+}
+
+var dataa = lookUp("Harry", "lastName");
+console.log(dataa);
+
+
+/*USE THE CONDITIONAL (TERNARY) OPERATOR */
+
+// condition ? statement-if-true : statement-if-false;
+
+function checkEqual(a, b) {
+    return a === b ? true : false;
+}
+
+console.log(checkEqual(1,3));
+
